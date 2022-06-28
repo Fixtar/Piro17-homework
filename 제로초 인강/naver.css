@@ -32,6 +32,9 @@ html {
   margin: 0 auto;
   width: 1080px;
 }
+.inline-block {
+  display: inline-block;
+}
 
 .relative {
   position: relative;
@@ -277,4 +280,70 @@ main {
   background-color: #f2f4f7;
   display: inline-block;
   width: 100%;
+}
+#main-centered {
+  padding: 8px 10px;
+  width: 1100px;
+}
+
+#main-ad {
+  width: 740px;
+  height: 120px;
+  background: #555;
+}
+
+#main-login {
+  width: 332px;
+  height: 120px;
+  vertical-align: top;
+  background-color: white;
+}
+#main-ytn {
+  display: inline-block;
+  width: 740px;
+  height: 46px;
+  background-color: white;
+}
+#main-newsstand {
+  display: inline-block;
+  width: 740px;
+  height: 246px;
+  background-color: white;
+}
+#main-weather {
+  display: inline-block;
+  width: 332px;
+  height: 142px;
+  background-color: white;
+}
+#main-second-ad {
+  display: inline-block;
+  width: 332px;
+  height: 150px;
+  background: #555;
+}
+#main-category {
+  float: left;
+  width: 740px;
+  height: 837px;
+  background: white;
+}
+
+#main-shopping {
+  width: 332px;
+  height: 837px;
+  background: white;
+}
+
+#main-event {
+  width: 740px;
+  height: 130px;
+  background: white;
+  vertical-align: top;
+}
+
+#main-third-ad {
+  width: 332px;
+  height: 130px;
+  background: #555;
 }
