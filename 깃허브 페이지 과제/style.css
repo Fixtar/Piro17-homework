@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+.float-left {
+  float: left;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.center-align {
+  margin: 0 auto;
+  width: 1080px;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.relative {
+  position: relative;
+}
+main {
+  display: inline-block;
+  background-color: rgb(44, 49, 54);
+  padding: 8px 10px;
+  width: 1600px;
+}
+#topBar {
+  height: 56px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+#navtop {
+  margin-left: 100px;
+}
+#navtop a {
+  float: left;
+  text-align: center;
+  margin: 14px 14px 14px 14px;
+}
+#navtop a i {
+  padding-left: 7px;
+}
+#navsign {
+  float: right;
+  text-align: center;
+  margin-right: 100px;
+}
+#navsign a {
+  text-decoration: none;
+  color: white;
+  float: left;
+  text-align: center;
+  margin: 14px 14px 14px 14px;
+}
+#search {
+  float: left;
+  width: 240px;
+  height: 40px;
+  font-size: 20px;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgb(71, 75, 79);
+  position: relative;
+  top: 10px;
+}
+#signup {
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 3px;
+  position: relative;
+  top: -5px;
+}
+
+#main {
+  display: inline-block;
+  width: 100%;
+  height: 700px;
+  align-items: center;
+}
+#main-first {
+  float: left;
+  width: 700px;
+  margin: 100px 50px 100px 50px;
+  padding-left: 150px;
+}
+
+#title {
+  display: inline-block;
+  width: 300px;
+  color: white;
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+#content {
+  color: rgb(178, 181, 182);
+  width: 500px;
+  font-size: 22px;
+}
+#content span {
+  color: white;
+  text-decoration: underline;
+}
+
+#main-second {
+  float: left;
+  width: 600px;
+  text-align: center;
+  padding: 80px 80px 20px 10px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  margin-right: 50px;
+}
+#main-second input {
+  width: 90%;
+  line-height: 24px;
+  padding: 8px 8px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+}
+
+#main-second input:valid {
+  outline: none;
+  background-color: white;
+}
+
+#main-second input:invalid {
+  outline: none;
+  background-color: rgb(233, 240, 253);
+}
+
+#main-second span {
+  font-size: 18px;
+  text-align: left;
+  margin: 5px 5px;
+  display: inline-block;
+}
+
+.block {
+  display: block !important;
+  padding-left: 4%;
+}
+
+#secondback {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+#main-second .explain {
+  font-size: 14px;
+  text-align: left;
+  padding-left: 4%;
+  margin: 5px 5px;
+  display: inline-block;
+}
+.hilightblue {
+  font-size: 14px !important;
+  color: rgb(107, 160, 224);
+  text-align: left;
+  margin: 5px 5px;
+  display: inline-block;
+}
+#btnwrapper {
+  display: inline-block;
+  width: 90%;
+  line-height: 50px;
+  padding: 8px 8px;
+  background-color: rgb(2, 180, 2);
+  border-radius: 5px;
+}
+
+#signupButton {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 60px 10px 60px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  background-color: rgb(2, 180, 2);
+  color: white;
+}
+#btnwrapper :hover {
+  cursor: pointer;
+}
+
+#photowrapper {
+  height: 200px;
+}
+#photo {
+  float: right;
+  margin-right: 50px;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
