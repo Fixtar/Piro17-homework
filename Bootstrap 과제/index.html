@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/c1be11131c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div class="sticky-top nav p-3 mb-2 bg-dark text-white nav--between">
+        <nav class="nav">
+          <a class="nav-link" href="#Piro">Pirograming</a>
+          <a class="nav-link disabled">Seongha</a>
+          <a class="nav-link active" aria-current="page" href="#intro">Intro</a>
+          <a class="nav-link" href="#Highlights">Highlights</a>
+          <a class="nav-link" href="#Gallery">Gallery</a>
+          <a class="nav-link" href="#Contact">Contact</a>
+        </nav>
+        <button type="button" class="btn btn-outline-info">About</button>
+      </div>
+    </div>
+    <main>
+      <div
+        id="Piro"
+        class="text-dark col w-auto h-auto m-5 d-flex flex-column align-items-center justify-content-center h-100"
+      >
+        <div class="piromargintop container-fluid text-center">
+          <div class="mt-5 fs-1">Pirograming 17</div>
+          <div class="m-4">cheer up</div>
+          <div class="bg-black progress" style="height: 1px"></div>
+          <div class="mt-4">
+            <button type=" button" class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </div>
+      <div id="intro"></div>
+      <div
+        id="Highlights"
+        class="text-white col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-dark"
+      >
+        <div class="container-fluid text-center">
+          <div class="fs-2 mb-4">Flexible Layouts</div>
+          <div class="bg-white progress" style="height: 1px"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="m-3">
+                  <div class="p-3">
+                    <i class="fa-7x fa-solid fa-display"></i>
+                  </div>
+                  <div class="fs-3">Responsive</div>
+                  <div>your site looks good everywhere</div>
+                </div>
+                <div id="Gallery" class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum1/200/300"
+                    alt=""
+                  />
+                </div>
+                <div class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum2/200/300"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="m-3">
+                  <div class="p-3">
+                    <i class="fa-7x fa-brands fa-sass"></i>
+                  </div>
+                  <div class="fs-3">Responsive</div>
+                  <div>your site looks good everywhere</div>
+                </div>
+                <div class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum4/200/300"
+                    alt=""
+                  />
+                </div>
+                <div class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum5/200/300"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="m-3">
+                  <div class="p-3">
+                    <i class="fa-7x fa-solid fa-star"></i>
+                  </div>
+                  <div class="fs-3">Responsive</div>
+                  <div>your site looks good everywhere</div>
+                </div>
+                <div class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum7/200/300"
+                    alt=""
+                  />
+                </div>
+                <div class="mb-3">
+                  <img
+                    class="img-fluid"
+                    src="https://picsum.photos/seed/picsum8/200/300"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="Contact"
+        class="text-white col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-secondary"
+      >
+        <div class="container-fluid text-center">
+          <div class="fs-2 mb-4 text-primary">Get In Touch</div>
+          <div class="bg-black progress" style="height: 1px"></div>
+        </div>
+        <div class="w-100 m-4">
+          <div class="row g-3">
+            <div class="col-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                aria-label="Name"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Email"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Phone"
+                aria-label="Phone"
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Your Message here"
+                id="exampleFormControlTextarea1"
+                rows="10"
+              ></textarea>
+              <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                <button class="btn btn-primary" type="button">Button</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div
+        id="Contact"
+        class="text-white col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-dark"
+      >
+        <div class="container-fluid text-start text-info fs-5">
+          <div class="row">
+            <div class="col-sm">Information</div>
+            <div class="col-sm">About</div>
+            <div class="col-sm">Stay Posted</div>
+          </div>
+        </div>
+        <div class="container-fluid text-start">
+          <div class="row">
+            <div class="col-sm">
+              <div>product</div>
+              <div>Services</div>
+              <div>Benefits</div>
+            </div>
+            <div class="col-sm">
+              <div>Contact Us</div>
+              <div>Delivery Information</div>
+              <div>Privacy Policy</div>
+              <div>Terms & Conditions</div>
+            </div>
+            <div class="col-sm">
+              <input
+                class="form-control me-2 mt-2 mb-2"
+                type="search"
+                placeholder="Tell us your email"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">
+                Subscribe for updates
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
