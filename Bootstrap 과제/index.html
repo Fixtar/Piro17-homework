@@ -19,27 +19,46 @@
   </head>
   <body>
     <div>
-      <div class="fixed-top nav p-3 mb-2 bg-dark text-white nav--between">
-        <nav class="nav">
-          <a class="nav-link" href="#Piro">Pirograming</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#Piro">Pirograming</a>
           <a class="nav-link disabled">Seongha</a>
-          <a class="nav-link active" aria-current="page" href="#intro">Intro</a>
-          <a class="nav-link" href="#Highlights">Highlights</a>
-          <a class="nav-link" href="#Gallery">Gallery</a>
-          <a class="nav-link" href="#Contact">Contact</a>
-        </nav>
-        <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-outline-info"
-          data-bs-toggle="modal"
-          data-bs-target="#aboutModal"
-        >
-          About
-        </button>
-
-        <!--todo 어바웃 모달창 띄우기-->
-      </div>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#Highlights">Highlights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-bs-toggle="modal"
+                data-bs-target="#aboutModal"
+              >
+                About
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </div>
     <main>
       <div
@@ -64,7 +83,9 @@
             Bulit On the Bootstrap Grid
           </div>
           <div class="m-4 text-white">cheer up</div>
-          <button type="button" class="btn btn-light">Learn more</button>
+          <a type="button" href="#Highlights" class="btn btn-light"
+            >Learn more</a
+          >
         </div>
       </div>
       <div
@@ -76,7 +97,7 @@
           <div class="bg-white progress" style="height: 1px"></div>
           <div class="container">
             <div class="row">
-              <div class="col">
+              <div class="col-md-4">
                 <div class="m-3">
                   <div class="p-3">
                     <i class="fa-7x fa-solid fa-display"></i>
@@ -85,7 +106,7 @@
                   <div>your site looks good everywhere</div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-md-4">
                 <div class="m-3">
                   <div class="p-3">
                     <i class="fa-7x fa-brands fa-sass"></i>
@@ -94,7 +115,7 @@
                   <div>Easy to theme and customize with SASS</div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-md-4">
                 <div class="m-3">
                   <div class="p-3">
                     <i class="fa-7x fa-solid fa-star"></i>
@@ -105,7 +126,7 @@
               </div>
             </div>
           </div>
-          <div class="container-fluid id="Gallery">
+          <div class="container-fluid" id="Gallery">
             <div class="row">
               <div class="col-md-4">
                 <div id="Gallery" class="mb-3">
@@ -213,27 +234,23 @@
         id="Contact"
         class="text-white col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-dark"
       >
-        <div class="container-fluid text-start text-info fs-5">
-          <div class="row">
-            <div class="col-sm">Information</div>
-            <div class="col-sm">About</div>
-            <div class="col-sm">Stay Posted</div>
-          </div>
-        </div>
         <div class="container-fluid text-start">
           <div class="row">
-            <div class="col-sm">
+            <div class="col-sm-4">
+              <div class="text-info fs-5">Information</div>
               <div>product</div>
               <div>Services</div>
               <div>Benefits</div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
+              <div class="text-info fs-5">About</div>
               <div>Contact Us</div>
               <div>Delivery Information</div>
               <div>Privacy Policy</div>
               <div>Terms & Conditions</div>
             </div>
-            <div class="col-sm">
+            <div class="col-md-4">
+              <div class="text-info fs-5">Stay Posted</div>
               <input
                 class="form-control me-2 mt-2 mb-2"
                 type="search"
@@ -303,26 +320,28 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content text-center bg-dark text-white">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h5 class="modal-title fs-5" id="exampleModalLabel">
+              피로그래밍 17기
+            </h5>
           </div>
-          <div class="modal-body"><p>about</p></div>
+          <div class="modal-body">
+            <p class="fs-2">파이팅!</p>
+            <p>모두들 아르샤 하시느라 수고 많으셨습니다!!</p>
+            <p>힘들더라도 끝나면 남는게 많을 겁니다.</p>
+            <p>남은 세션들도 힘내서 열심히 해봐요!</p>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              class="btn btn-secondary bg-dark text-primary border-0"
             >
+              Download
+            </button>
+            <button type="button" class="btn btn-info" data-bs-dismiss="modal">
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>

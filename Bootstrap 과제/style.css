@@ -1,8 +1,5 @@
 @import url(reset.css);
 
-.nav--between {
-  justify-content: space-between;
-}
 .piromargintop {
   margin-top: 15rem;
   margin-bottom: 15rem;
