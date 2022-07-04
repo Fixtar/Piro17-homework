@@ -19,7 +19,7 @@
   </head>
   <body>
     <div>
-      <div class="sticky-top nav p-3 mb-2 bg-dark text-white nav--between">
+      <div class="fixed-top nav p-3 mb-2 bg-dark text-white nav--between">
         <nav class="nav">
           <a class="nav-link" href="#Piro">Pirograming</a>
           <a class="nav-link disabled">Seongha</a>
@@ -28,7 +28,17 @@
           <a class="nav-link" href="#Gallery">Gallery</a>
           <a class="nav-link" href="#Contact">Contact</a>
         </nav>
-        <button type="button" class="btn btn-outline-info">About</button>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-outline-info"
+          data-bs-toggle="modal"
+          data-bs-target="#aboutModal"
+        >
+          About
+        </button>
+
+        <!--todo 어바웃 모달창 띄우기-->
       </div>
     </div>
     <main>
@@ -41,11 +51,22 @@
           <div class="m-4">cheer up</div>
           <div class="bg-black progress" style="height: 1px"></div>
           <div class="mt-4">
-            <button type=" button" class="btn btn-primary">Get Started</button>
+            <a class="btn btn-primary" href="#intro"> Get Started </a>
           </div>
         </div>
       </div>
-      <div id="intro"></div>
+      <div
+        id="intro"
+        class="text-dark col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-secondary"
+      >
+        <div class="piromargintop container-fluid text-center">
+          <div class="mt-5 fs-1 text-danger fw-bold">
+            Bulit On the Bootstrap Grid
+          </div>
+          <div class="m-4 text-white">cheer up</div>
+          <button type="button" class="btn btn-light">Learn more</button>
+        </div>
+      </div>
       <div
         id="Highlights"
         class="text-white col w-auto h-auto p-5 d-flex flex-column align-items-center justify-content-center h-100 bg-dark"
@@ -63,6 +84,30 @@
                   <div class="fs-3">Responsive</div>
                   <div>your site looks good everywhere</div>
                 </div>
+              </div>
+              <div class="col">
+                <div class="m-3">
+                  <div class="p-3">
+                    <i class="fa-7x fa-brands fa-sass"></i>
+                  </div>
+                  <div class="fs-3">Customizable</div>
+                  <div>Easy to theme and customize with SASS</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="m-3">
+                  <div class="p-3">
+                    <i class="fa-7x fa-solid fa-star"></i>
+                  </div>
+                  <div class="fs-3">consistent</div>
+                  <div>A mature, well-tested, stable codebase</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid id="Gallery">
+            <div class="row">
+              <div class="col-md-4">
                 <div id="Gallery" class="mb-3">
                   <img
                     class="img-fluid"
@@ -78,14 +123,7 @@
                   />
                 </div>
               </div>
-              <div class="col">
-                <div class="m-3">
-                  <div class="p-3">
-                    <i class="fa-7x fa-brands fa-sass"></i>
-                  </div>
-                  <div class="fs-3">Responsive</div>
-                  <div>your site looks good everywhere</div>
-                </div>
+              <div class="col-md-4">
                 <div class="mb-3">
                   <img
                     class="img-fluid"
@@ -101,14 +139,7 @@
                   />
                 </div>
               </div>
-              <div class="col">
-                <div class="m-3">
-                  <div class="p-3">
-                    <i class="fa-7x fa-solid fa-star"></i>
-                  </div>
-                  <div class="fs-3">Responsive</div>
-                  <div>your site looks good everywhere</div>
-                </div>
+              <div class="col-md-4">
                 <div class="mb-3">
                   <img
                     class="img-fluid"
@@ -138,7 +169,7 @@
         </div>
         <div class="w-100 m-4">
           <div class="row g-3">
-            <div class="col-4">
+            <div class="col-md-4">
               <input
                 type="text"
                 class="form-control"
@@ -146,7 +177,7 @@
                 aria-label="Name"
               />
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
               <input
                 type="text"
                 class="form-control"
@@ -154,7 +185,7 @@
                 aria-label="Email"
               />
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
               <input
                 type="text"
                 class="form-control"
@@ -209,13 +240,97 @@
                 placeholder="Tell us your email"
                 aria-label="Search"
               />
-              <button class="btn btn-primary" type="submit">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
                 Subscribe for updates
               </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade text-black"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content d-grid">
+                    <div class="modal-header justify-content-center">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Nice-Job!
+                      </h5>
+                    </div>
+                    <div
+                      class="modal-body border-bottom ps-5 pe-5 ms-5 me-5 text-center"
+                    >
+                      <p>
+                        You clicked the button. but it dosen't actually go
+                        anywhere.
+                      </p>
+                      <p class="text-center text-primary pt-3">
+                        Learn more Bootstrap
+                      </p>
+                    </div>
+                    <div class="d-grid gap-2 m-3">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                      >
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="aboutModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"><p>about</p></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
