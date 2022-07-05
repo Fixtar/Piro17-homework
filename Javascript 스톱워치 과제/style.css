@@ -1,0 +1,10 @@
+@import url(./reset.css);
+
+#listHeader {
+  display: flex;
+}
+
+#timeList {
+  display: flex;
+  flex-direction: column;
+}

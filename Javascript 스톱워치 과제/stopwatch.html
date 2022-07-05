@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>stop watch</title>
+  </head>
+  <body>
+    <h1>Stop Watch</h1>
+    <div id="stopwatch">
+      <p id="time">00:00</p>
+      <button id="start" onclick="startTime()">Start</button>
+      <button id="stop" onclick="stopTime()">Stop</button>
+      <button id="reset" onclick="resetTime()">Reset</button>
+    </div>
+    <div id="timeListBox">
+      <div id="listHeader">
+        <input type="checkbox" name="animal" value="selectall" onclick="" />
+        <b>Select All</b>
+        <p>Time List</p>
+        <button>delete</button>
+      </div>
+      <div id="timeList">
+        <div class="timeLog"><input type="checkbox" /> 개</div>
+        <div class="timeLog"><input type="checkbox" /> 고양이</div>
+        <div class="timeLog"><input type="checkbox" " /> 소</div>
+      </div>
+    </div>
+    <script>
+      const Timer = document.querySelector("#time");
+      let TimeId;
+      let Time = 0;
+
+      function printTime() {
+        Time++;
+        let sec = parseInt(Time / 100);
+        let misec = Time % 100;
+        Timer.innerText = `${sec} : ${misec}`;
+      }
+
+      function record() {
+        //기록을 저장하는 함수
+        const node = document.createElement("div");
+        node.innerHTML = `<input type="checkbox" class="timeLog" /> ${Timer.innerText}`;
+        document.querySelector("#timeList").appendChild(node);
+      }
+
+      function startTime() {
+        clearInterval(TimeId);
+        TimeId = setInterval(printTime, 10);
+      }
+      function stopTime() {
+        clearInterval(TimeId);
+        record();
+      }
+
+      function resetTime() {
+        clearInterval(TimeId);
+        Time = 0;
+        Timer.innerHTML = "00:00";
+      }
+    </script>
+  </body>
+</html>
