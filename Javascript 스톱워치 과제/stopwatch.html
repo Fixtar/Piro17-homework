@@ -5,34 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/c1be11131c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>stop watch</title>
   </head>
   <body>
-    <h1>Stop Watch</h1>
-    <div id="stopwatch">
-      <p id="time">00:00</p>
-      <button id="start" onclick="startTime()">Start</button>
-      <button id="stop" onclick="stopTime()">Stop</button>
-      <button id="reset" onclick="resetTime()">Reset</button>
-    </div>
-    <div id="timeListBox">
-      <div id="listHeader">
-        <input
-          type="checkbox"
-          id="checkAll"
-          value="selectall"
-          onclick="selectall()"
-        />
-        <b>Select All</b>
-        <p>Time List</p>
-        <button onclick="deleteqSelected()">delete</button>
+    <main>
+      <h1 id="title"><i class="fa-solid fa-stopwatch"></i> 피로 Stop Watch</h1>
+      <div id="stopwatch">
+        <p id="time">00:00</p>
+        <div class="timeBtns">
+          <button id="start" onclick="startTime()">Start</button>
+          <button id="stop" onclick="stopTime()">Stop</button>
+          <button id="reset" onclick="resetTime()">Reset</button>
+        </div>
       </div>
-      <div id="timeList">
-        <div class="timeLog" name="check"><input type="checkbox" /> 개</div>
-        <div class="timeLog" name="check"><input type="checkbox" /> 고양이</div>
-        <div class="timeLog" name="check"><input type="checkbox" " /> 소</div>
+      <div id="timeListBox">
+        <div id="listHeader">
+          <input
+            type="checkbox"
+            id="checkAll"
+            value="selectall"
+            onclick="selectall()"
+          />
+          <p>Time List</p>
+          <button id="deleteBtn" onclick="deleteqSelected()">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+        <div id="timeList"></div>
       </div>
-    </div>
+    </main>
     <script>
       const Timer = document.querySelector("#time");
       let TimeId;
