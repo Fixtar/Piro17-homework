@@ -17,15 +17,20 @@
     </div>
     <div id="timeListBox">
       <div id="listHeader">
-        <input type="checkbox" name="animal" value="selectall" onclick="" />
+        <input
+          type="checkbox"
+          id="checkAll"
+          value="selectall"
+          onclick="selectall()"
+        />
         <b>Select All</b>
         <p>Time List</p>
-        <button>delete</button>
+        <button onclick="deleteqSelected()">delete</button>
       </div>
       <div id="timeList">
-        <div class="timeLog"><input type="checkbox" /> 개</div>
-        <div class="timeLog"><input type="checkbox" /> 고양이</div>
-        <div class="timeLog"><input type="checkbox" " /> 소</div>
+        <div class="timeLog" name="check"><input type="checkbox" /> 개</div>
+        <div class="timeLog" name="check"><input type="checkbox" /> 고양이</div>
+        <div class="timeLog" name="check"><input type="checkbox" " /> 소</div>
       </div>
     </div>
     <script>
@@ -43,7 +48,9 @@
       function record() {
         //기록을 저장하는 함수
         const node = document.createElement("div");
-        node.innerHTML = `<input type="checkbox" class="timeLog" /> ${Timer.innerText}`;
+        node.className = "timeLog";
+        node.name = "check";
+        node.innerHTML = `<input type="checkbox"/> ${Timer.innerText}`;
         document.querySelector("#timeList").appendChild(node);
       }
 
@@ -60,6 +67,28 @@
         clearInterval(TimeId);
         Time = 0;
         Timer.innerHTML = "00:00";
+      }
+
+      function selectall() {
+        const check = document.querySelectorAll("#timeList input");
+        if (document.querySelector("#checkAll").checked) {
+          for (let i = 0; i < check.length; i++) {
+            check[i].checked = true;
+          }
+        } else {
+          for (let i = 0; i < check.length; i++) {
+            check[i].checked = false;
+          }
+        }
+      }
+      function deleteqSelected() {
+        const check = document.querySelectorAll("#timeList input");
+        for (let i = 0; i < check.length; i++) {
+          if (check[i].checked) {
+            check[i].parentNode.remove();
+          }
+        }
+        document.querySelector("#checkAll").checked = false;
       }
     </script>
   </body>
