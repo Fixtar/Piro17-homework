@@ -20,6 +20,7 @@ while 1:
         num+=1;
         print('playerA :', num);
         if num >=31:
+            print('playerB win!');
             exit();
 
     #5단계
@@ -37,4 +38,5 @@ while 1:
         num+=1;
         print('playerB :', num);
         if num >=31:
+            print('playerA win!');
             exit();
