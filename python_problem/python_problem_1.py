@@ -1,4 +1,4 @@
-
+import random
 #1단계
 num = 0;
 #2단계
@@ -18,13 +18,13 @@ def brGame():
 
 
 while 1:
-    x = brGame();
+    x = random.randint(1, 3);
     #4단계
     for i in range(x):
         num+=1;
-        print('playerA :', num);
+        print('computer :', num);
         if num >=31:
-            print('playerB win!');
+            print('player win!');
             exit();
     
 
@@ -32,9 +32,9 @@ while 1:
     x = brGame();
     for i in range(x):
         num+=1;
-        print('playerB :', num);
+        print('player :', num);
         if num >=31:
-            print('playerA win!');
+            print('computer win!');
             exit();
 
 
