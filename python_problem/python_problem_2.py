@@ -79,7 +79,10 @@ while True :
                 except ValueError:
                     print('Score is not positive integer!');
                 else:
-                    Menu1(a,mid,final);
+                    if mid < 0 or final < 0:
+                        print('Score is not positive integer!');
+                    else:
+                        Menu1(a,mid,final);
 
         #학생 정보 입력받기
         #예외사항 처리(데이터 입력 갯수, 이미 존재하는 이름, 입력 점수 값이 양의 정수인지)
