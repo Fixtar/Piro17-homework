@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>홈 화면</title>
-  </head>
-  <body>
-    {% for review in reviews %}
-    <article>
-      <h1>
-        <a href="{% url 'reviews:detail' review.id %}">{{review.title}}</a>
-      </h1>
-      <p>개봉 년도: {{review.openyear}}</p>
-      <p>장르: {{review.genre}}</p>
-      <p>별점: {{review.starpoint}}</p>
-    </article>
-    {% endfor %}
-
-    <a href="/create">리뷰 작성</a>
-  </body>
-</html>
+{% extends 'reviews/base.html' %}{% block content %}
+<div style="display: flex; align-items: center">
+  <p style="margin-right: 3rem; margin-left: 4rem">정렬</p>
+  <form action="{% url 'reviews:home'%}" method="get">
+    <select name="query">
+      <option value="">등록순</option>
+      <option value="title">제목</option>
+      <option value="openyear">개봉 년도</option>
+      <option value="genre">장르</option>
+      <option value="starpoint">별점</option>
+      <option value="runningtime">러닝타임</option>
+    </select>
+    <input type="submit" value="검색" />
+  </form>
+</div>
+{% for review in reviews %}
+<article>
+  <h1>
+    <a href="{% url 'reviews:detail' review.id %}">{{review.title}}</a>
+  </h1>
+  <p>개봉 년도: {{review.openyear}}</p>
+  <p>장르: {{review.genre}}</p>
+  <p>별점: {{review.starpoint}}</p>
+</article>
+{% endfor %} {% endblock %}

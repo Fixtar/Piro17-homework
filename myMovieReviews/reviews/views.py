@@ -1,5 +1,6 @@
 from multiprocessing import context
 from turtle import title
+from unicodedata import category
 from django.shortcuts import render, redirect
 from .models import Review
 
@@ -9,7 +10,7 @@ def home(request):
     query = request.GET.get('query',None)
     if query:
         #제목으로 검색
-        reviews = Review.objects.filter(title__contains=query)
+        reviews = Review.objects.order_by(query)
     else:
         reviews = Review.objects.all()
     context = {
@@ -31,7 +32,9 @@ def create(request):
 
         return redirect('/')
 
-    context ={}
+    context = {
+        'category': Review.genrecategory
+    }
     return render(request, 'reviews/create.html',context)
 
 
