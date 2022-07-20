@@ -11,3 +11,8 @@ const minus = (id) => {
   document.getElementById(id).innerText = interest;
   const { data } = axios.post("/", { id, interest });
 };
+
+const idea_like = (id) => {
+  star = id;
+  const { data } = axios.post("/", { star });
+};

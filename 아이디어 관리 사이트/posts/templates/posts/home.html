@@ -29,13 +29,13 @@
 <article>
   {% if post.image %}
   <div id="img-box">
-    <div id="icon-box">
-      {% if post.ideastar %}
-      <i class="fas fa-star" style="color: #ffc107"></i>
+    <button id="{{post.id}}" onclick="idea_like({{post.id}})">
+      {% if post.ideastar == False %}
+      <i class="fa-regular fa-star" style="color: #ffc107"></i>
       {% else %}
-      <i class="far fa-star" style="color: #ffc107"></i>
+      <i class="fa-solid fa-star" style="color: #ffc107"></i>
       {% endif %}
-    </div>
+    </button>
     <img src="{{ post.image.url }}" />
   </div>
   {% endif %}

@@ -10,8 +10,15 @@ from django.views.decorators.csrf import csrf_exempt
 def home(request):
     if(request.method == 'POST'):
         req = json.loads(request.body)
-        Post.objects.filter(id = req['id']).update(interest = req['interest'])
+        try:
+            ineter = req['interest']
+            Post.objects.filter(id = req['id']).update(interest = ineter)
+        except KeyError:
+            pass
+        ideastar = Post.objects.get(id = req['star']).ideastar
+        Post.objects.filter(id = req['star']).update(ideastar = not ideastar)
 
+            
     query = request.GET.get('query',None)
     if query:
         #제목으로 검색
