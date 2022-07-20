@@ -1,0 +1,13 @@
+img {
+  width: 200px;
+  height: 200px;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+}
+
+#img-box {
+  margin-right: 4rem;
+}

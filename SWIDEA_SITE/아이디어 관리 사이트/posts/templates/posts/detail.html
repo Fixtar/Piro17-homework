@@ -1,0 +1,35 @@
+{% extends 'posts/base.html' %}
+
+<head>
+  {% load static %} {% block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/ideahome.css' %}" />
+  {% endblock %}
+</head>
+{% block content %}
+
+<article>
+  <div>
+    <img src="{{ post.image.url }}" />
+  </div>
+  <div>
+    <p>{{post.ideastar}}</p>
+    <h2>제목 : {{ post.title }}</h2>
+    <div>내용 : {{post.content}}</div>
+    <div>관심도 : {{post.interest}}</div>
+    <div>
+      개발 도구:
+      <a href="{% url 'posts:devtoolsdetail' post.devtool.id %}"
+        >{{post.devtool.name}}</a
+      >
+    </div>
+  </div>
+</article>
+
+<div>업데이트 : <a href="{% url 'posts:update' post.id %} ">update</a></div>
+<a href="/">목록</a>
+<form action="{% url 'posts:delete' post.id %}" method="post">
+  {% csrf_token %}
+  <button>삭제</button>
+</form>
+
+{% endblock %}

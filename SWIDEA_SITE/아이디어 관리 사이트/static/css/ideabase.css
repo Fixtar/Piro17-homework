@@ -1,0 +1,24 @@
+a {
+  text-decoration-line: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: large;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin-left: 4rem;
+}
+
+#main-box {
+  margin: 4rem;
+  background-color: azure;
+}

@@ -1,0 +1,32 @@
+{% extends 'posts/base.html' %} {% block content %}
+
+<article>
+  <div>
+    <h2>
+      이름 :
+      <a href="{% url 'posts:devtoolsdetail' devtool.id %}"
+        >{{ devtool.name }}</a
+      >
+    </h2>
+    <div>종류 : {{devtool.kind}}</div>
+    <div>내용: {{devtool.content}}</div>
+
+    <div>
+      <p>만들 수 있는 게시글 목록</p>
+      {% for post in posts %}
+      <a href="{% url 'posts:detail' post.id %}">{{post.title}}</a>
+      {% endfor %}
+    </div>
+  </div>
+</article>
+
+<div>
+  업데이트 : <a href="{% url 'posts:devtoolsupdate' devtool.id %} ">update</a>
+</div>
+<a href="/devtools/">목록</a>
+<form action="{% url 'posts:devtoolsdelete' devtool.id %}" method="post">
+  {% csrf_token %}
+  <button>삭제</button>
+</form>
+
+{% endblock %}

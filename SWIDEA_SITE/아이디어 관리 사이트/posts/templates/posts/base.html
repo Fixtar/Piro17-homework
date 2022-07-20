@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/ideabase.css' %}" />
+    {% block extrahead %} {% endblock %}
+    <title>아이디어 리스트</title>
+  </head>
+  <body>
+    <header>
+      <div><a href="/">my idea list</a></div>
+      <div>
+        <a href="/create">아이디어 등록</a>
+        <a href="/">아이디어 관리</a>
+        <a href="/devtools/create">개발툴 등록</a>
+        <a href="/devtools">개발툴 관리</a>
+      </div>
+    </header>
+    <div style="height: 1px; background-color: black"></div>
+    <div id="main-box">{% block content %} {% endblock %}</div>
+  </body>
+</html>

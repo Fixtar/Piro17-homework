@@ -1,0 +1,32 @@
+{% extends 'posts/base.html' %}{% block content %}
+<form
+  action="{% url 'devtools:update' devtool.id %}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <h2>
+    <input
+      type="text"
+      name="name"
+      placeholder="이름"
+      value="{{devtool.name}}"
+    />
+  </h2>
+  <p>
+    <input
+      type="number"
+      name="kind"
+      placeholder="종류"
+      value="{{devtool.kind}}"
+    />
+  </p>
+  <textarea name="content" id="" cols="30" rows="10">
+{{devtool.content}}</textarea
+  >
+
+  <div>
+    <input type="submit" value="제출" />
+  </div>
+</form>
+<a href="/devtools/">Home</a>{% endblock %}

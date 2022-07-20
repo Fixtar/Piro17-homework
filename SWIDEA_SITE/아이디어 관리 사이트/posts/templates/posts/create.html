@@ -1,0 +1,29 @@
+{% extends 'posts/base.html' %}{% block content %}
+<form
+  action="{% url 'posts:create' %}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <h2>
+    <input type="text" name="title" placeholder="제목" />
+  </h2>
+  <p>
+    <input type="file" name="image" />
+  </p>
+  <p>
+    <select name="devtool">
+      {% for tool in devtools %}
+      <option value="{{tool.id}}">{{tool.name}}</option>
+      {% endfor %}
+    </select>
+    <input type="number" name="interest" placeholder="관심도" />
+  </p>
+  <textarea name="content" id="" cols="30" rows="10"></textarea>
+
+  <div>
+    <input type="submit" value="제출" />
+  </div>
+</form>
+<a href="/">Home</a>
+{% endblock %}
