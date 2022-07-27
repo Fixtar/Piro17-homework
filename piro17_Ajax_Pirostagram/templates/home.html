@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c1be11131c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <title>홈 화면</title>
+  </head>
+  <body>
+    <main>
+      <header></header>
+      <div>img</div>
+      <div>
+        content
+        <div id="comment-list">
+          {% for comment in comments %}
+          <div id="comment{{ comment.id }}" class="comment">
+            <div class="comment-header">
+              <span>user</span>
+              <span>{{comment.content}}</span>
+            </div>
+            <div class="commentBtns">
+              <div onclick="likeBtn({{comment.id}})">
+                {% if commnet.like == True %}
+                <i id="like{{ comment.id }}" class="fa-solid fa-heart"></i>
+                {% else %}
+                <i id="like{{ comment.id }}" class="fa-regular fa-heart"></i>
+                {% endif %}
+              </div>
+              <div onclick="deleteComment({{comment.id}})">
+                <i class="fa-regular fa-trash-can"></i>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div>
+          <form action="/" method="post">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글달기" />
+            <input type="submit" value="게시" />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const request = new XMLHttpRequest();
+    const likeBtn = (id) => {
+      request.open("POST", "/like/", true);
+      request.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+      request.send(JSON.stringify({ commentId: id }));
+    };
+    request.onreadystatechange = () => {
+      if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status < 400) {
+          const { commentId } = JSON.parse(request.response);
+          const like = document.querySelector(`#like${commentId}`);
+          if (like.classList.contains("fa-regular")) {
+            like.classList.remove("fa-regular");
+            like.classList.add("fa-solid");
+          } else {
+            like.classList.remove("fa-solid");
+            like.classList.add("fa-regular");
+          }
+        }
+      }
+    };
+
+    const deletereq = new XMLHttpRequest();
+    const deleteComment = (id) => {
+      deletereq.open("POST", "/delete/", true);
+      deletereq.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+      deletereq.send(JSON.stringify({ commentId: id }));
+    };
+    deletereq.onreadystatechange = () => {
+      if (deletereq.readyState === XMLHttpRequest.DONE) {
+        if (deletereq.status < 400) {
+          const { commentId } = JSON.parse(deletereq.response);
+          const comment = document.querySelector(`#comment${commentId}`);
+          comment.remove();
+        }
+      }
+    };
+  </script>
+</html>
